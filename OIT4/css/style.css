@@ -811,13 +811,13 @@ header .search-form button:hover {
 .to-top { opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s, transform 0.3s ease, background-color 0.3s ease; }
 .to-top.visible { opacity: 1; visibility: visible; }
 
-/* --- модальне вікно --- */
-dialog.modal { margin: auto; padding: 0; width: calc(100% - 2rem); max-width: 600px; border: none; background: transparent; overflow: visible; }
-dialog.modal[open] { animation: pop 0.35s ease; }
-dialog.modal::backdrop { background: rgba(20, 24, 62, 0.6); backdrop-filter: blur(3px); }
+/* --- модальне вікно (CSS :target) --- */
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(20, 24, 62, 0); backdrop-filter: blur(0px); display: flex; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, background 0.3s ease, backdrop-filter 0.3s ease, visibility 0.3s ease; z-index: 1000; }
+.modal:target { opacity: 1; visibility: visible; background: rgba(20, 24, 62, 0.6); backdrop-filter: blur(3px); animation: pop 0.35s ease; }
+.modal-content { margin: auto; padding: 0; width: calc(100% - 2rem); max-width: 600px; background: transparent; }
 .modal form { position: relative; width: 100%; margin: 0; box-shadow: var(--shadow-hover); }
 .modal h3 { font-family: var(--font-head); font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem; }
-.modal-close { position: absolute; top: 0.8rem; right: 1.2rem; margin: 0; padding: 0; background: none; border: none; color: var(--clr-text); font-size: 2rem; line-height: 1; }
+.modal-close { position: absolute; top: 0.8rem; right: 1.2rem; margin: 0; padding: 0; background: none; border: none; color: var(--clr-text); font-size: 2rem; line-height: 1; text-decoration: none; }
 .modal-close:hover { background: none; color: var(--clr-accent); }
 
 /* --- валідація лише HTML + CSS (псевдокласи :valid / :invalid / :placeholder-shown) --- */

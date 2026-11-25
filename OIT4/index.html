@@ -9,6 +9,7 @@
     <title>Екскурсійне бюро Чернівців</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Volkhov:wght@700&display=swap">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body id="top">
@@ -33,14 +34,15 @@
                 <a href="#oput">Опитування</a>
                 <a href="#widp">Контакти</a>
                 <a href="tours.html">Тарифи</a>
+                <a href="example.html">Екскурсії</a>
             </nav>
             <form action="/search" method="get" class="search-form">
                 <input type="search" name="p" placeholder="Пошук екскурсії..." aria-label="Пошук екскурсії">
                 <button type="submit" aria-label="Шукати"><i class="fa-solid fa-magnifying-glass"></i></button>
             </form>
-        </div>
-        <button type="button" class="nav-signup" data-open>Вхід</button>
-    </header>
+             </div>
+            <a href="#signin" class="nav-signup">Вхід</a>
+        </header>
 
     <main>
         <section id="hero">
@@ -323,15 +325,17 @@
         <p>&copy; 2026 Чернівці-Тур. Всі права захищено. За підтримки румунської мафії.</p>
     </footer>
 
-    <dialog id="signin" class="modal" aria-labelledby="signin-title">
-        <form action="/login" method="post">
-            <button type="button" class="modal-close" data-close aria-label="Закрити">&times;</button>
-            <h3 id="signin-title">Вхід до кабінету</h3>
-            <p><label for="m-email">Email:</label><br><input type="email" id="m-email" name="email" placeholder="mail@example.com" required><small class="hint">Введіть коректну адресу, наприклад name@mail.ua</small></p>
-            <p><label for="m-pass">Пароль:</label><br><input type="password" id="m-pass" name="password" minlength="8" pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" title="Мінімум 8 символів, літери та цифри" placeholder="Введіть пароль" required><small class="hint">Мінімум 8 символів, літери та цифри</small></p>
-            <p><button type="submit">Увійти</button> <a href="#whid" data-close>Створити акаунт</a></p>
-        </form>
-    </dialog>
+    <div id="signin" class="modal">
+        <div class="modal-content">
+            <form action="/login" method="post">
+                <a href="#" class="modal-close" aria-label="Закрити">&times;</a>
+                <h3 id="signin-title">Вхід до кабінету</h3>
+                <p><label for="m-email">Email:</label><br><input type="email" id="m-email" name="email" placeholder="mail@example.com" required><small class="hint">Введіть коректну адресу, наприклад name@mail.ua</small></p>
+                <p><label for="m-pass">Пароль:</label><br><input type="password" id="m-pass" name="password" minlength="8" pattern="(?=.*\d)(?=.*[A-Za-z]).{8,}" title="Мінімум 8 символів, літери та цифри" placeholder="Введіть пароль" required><small class="hint">Мінімум 8 символів, літери та цифри</small></p>
+                <p><button type="submit">Увійти</button> <a href="#whid">Створити акаунт</a></p>
+            </form>
+        </div>
+    </div>
 
     <a href="#top" class="to-top" aria-label="Повернутися нагору"></a>
 

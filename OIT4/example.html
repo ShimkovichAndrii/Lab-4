@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Екскурсії Чернівцями: пішохідні, автобусні та театралізовані маршрути. Дізнайтесь про всі доступні тури.">
+    <meta name="theme-color" content="#14183E">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧭</text></svg>">
+    <title>Екскурсії - Чернівці-Тур</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f8f9fa;
+        }
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #14183E 0%, #1a2149 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero-section h1 {
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        .tour-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: none;
+            height: 100%;
+        }
+        .tour-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .tour-card img {
+            height: 250px;
+            object-fit: cover;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .tour-price {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #14183E;
+        }
+        .tour-duration {
+            color: #6c757d;
+            font-size: 0.95rem;
+        }
+        .btn-custom {
+            background-color: #14183E;
+            border-color: #14183E;
+            color: white;
+            font-weight: 600;
+            padding: 10px 25px;
+        }
+        .btn-custom:hover {
+            background-color: #0f1230;
+            border-color: #0f1230;
+            color: white;
+        }
+        footer {
+            background-color: #14183E;
+            color: white;
+            padding: 30px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">🧭 Чернівці-Тур</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#hero">Головна</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="example.html">Екскурсії</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#news">Новини</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#reviews">Відгуки</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="tours.html">Тарифи</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div class="container">
+            <h1>Екскурсії Чернівцями</h1>
+            <p class="lead">Відкрийте красу історичного міста разом з нами</p>
+            <p>Вибирайте з розширеного каталогу екскурсій: від пішохідних прогулянок до автобусних турів</p>
+        </div>
+    </section>
+
+    <main class="container my-5">
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="text-center mb-4">Усі доступні тури</h2>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-3">
+                <div class="card tour-card">
+                    <img src="img/universitet.jpg" class="card-img-top" alt="Чернівецький університет">
+                    <div class="card-body">
+                        <h5 class="card-title">Резиденція митрополитів</h5>
+                        <p class="card-text">Масивна будівля у австро-угорському стилі, яка вражає своєю величавістю та розкішним інтер'єром. Дізнайтесь про історію цієї легендарної резиденції.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="tour-price">200 грн</span>
+                            <span class="tour-duration">2.5 год</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-top-0">
+                        <a href="index.html#signin" class="btn btn-custom w-100">Записатися</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card tour-card">
+                    <img src="img/vylica.jpg" class="card-img-top" alt="Вулиця Ольги Кобилянської">
+                    <div class="card-body">
+                        <h5 class="card-title">Вулиця Ольги Кобилянської</h5>
+                        <p class="card-text">Одна з найбільш живописних вулиць Чернівців. Прогуляйтесь вулицями, де жила й творила видатна письменниця.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="tour-price">150 грн</span>
+                            <span class="tour-duration">1.5 год</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-top-0">
+                        <a href="index.html#signin" class="btn btn-custom w-100">Записатися</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card tour-card">
+                    <img src="img/teatr.jpg" class="card-img-top" alt="Театральна площа">
+                    <div class="card-body">
+                        <h5 class="card-title">Театральна площа</h5>
+                        <p class="card-text">Серце культурного життя Чернівців. Познайомтесь з історією театру та архітектурними пам'ятками площі.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="tour-price">150 грн</span>
+                            <span class="tour-duration">2 год</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-top-0">
+                        <a href="index.html#signin" class="btn btn-custom w-100">Записатися</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6 col-lg-3">
+                <div class="card tour-card">
+                    <img src="img/krinica.jpg" class="card-img-top" alt="Турецька криниця">
+                    <div class="card-body">
+                        <h5 class="card-title">Турецька криниця</h5>
+                        <p class="card-text">Легендарна пам'ятка міста з багатою історією. Часто стає улюбленою зупинкою туристів та місцевих мешканців.</p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span class="tour-price">250 грн</span>
+                            <span class="tour-duration">1.5 год</span>
+                        </div>
+                    </div>
+                    <div class="card-footer bg-white border-top-0">
+                        <a href="index.html#signin" class="btn btn-custom w-100">Записатися</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <div class="alert alert-info d-flex align-items-center" role="alert">
+                    <div>
+                        <strong>Знижки та спеціальні пропозиції!</strong> Студентам — 20% знижка. Групи від 10 осіб — 15% знижка. Комбіновані тури — додаткові 5% економії.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row mt-5">
+            <div class="col-12">
+                <h3 class="text-center mb-4">Чому обрати нас?</h3>
+            </div>
+        </div>
+
+        <div class="row g-4 mb-5">
+            <div class="col-md-4">
+                <div class="card border-0 text-center h-100 p-4">
+                    <div class="mb-3">
+                        <span style="font-size: 3rem;">👨‍🏫</span>
+                    </div>
+                    <h5 class="card-title">Професійні гіди</h5>
+                    <p class="card-text">Наші гіди мають глибокі знання про історію та архітектуру Чернівців.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 text-center h-100 p-4">
+                    <div class="mb-3">
+                        <span style="font-size: 3rem;">🕐</span>
+                    </div>
+                    <h5 class="card-title">Гнучкий розклад</h5>
+                    <p class="card-text">Екскурсії проводяться щодня. Можливі приватні групові тури за домовленістю.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card border-0 text-center h-100 p-4">
+                    <div class="mb-3">
+                        <span style="font-size: 3rem;">💰</span>
+                    </div>
+                    <h5 class="card-title">Доступні ціни</h5>
+                    <p class="card-text">Якісні екскурсії за справедливими цінами. Багато варіантів на будь-який гаманець.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="mb-2"><strong>Чернівці-Тур</strong></p>
+            <p class="mb-3">
+                <a href="index.html">Головна</a> · 
+                <a href="tours.html">Тарифи</a> · 
+                <a href="invitation.html">Запрошення на подію</a>
+            </p>
+            <p>&copy; 2026 Чернівці-Тур. Всі права захищено. За підтримки румунської мафії.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

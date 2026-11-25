@@ -11,12 +11,6 @@ const setMenu = open => {
 burger.onclick = () => setMenu(!menu.classList.contains('open'));
 $$('#menu a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
-/* модальне вікно входу */
-const dlg = $('#signin');
-$$('[data-open]').forEach(b => b.onclick = () => dlg.showModal());
-$$('[data-close]').forEach(b => b.addEventListener('click', () => dlg.close()));
-dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
-
 /* кнопка «вгору» з'являється після прокручування */
 const up = $('.to-top');
 const toggleUp = () => up.classList.toggle('visible', scrollY > 400);
