@@ -1,0 +1,891 @@
+:root {
+    /* Колірна палітра згідно з макетом */
+    --clr-primary: #14183E;
+    --clr-accent: #DF6951;
+    --clr-yellow: #F1A501;
+    --clr-text: #5E6282;
+    --clr-bg-main: #FFFFFF;
+    --clr-bg-alt: #F8F8FC;
+    --clr-border: #E5E8F0;
+
+    --font-main: 'Roboto', sans-serif;
+    --font-head: 'Volkhov', serif;
+    --radius-lg: 1.5rem;
+    --radius-sm: 0.5rem;
+    --shadow-card: 0 1rem 2.5rem rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 1.5rem 3.5rem rgba(0, 0, 0, 0.12);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--clr-text);
+    background-color: var(--clr-bg-main);
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+h1, h2, h3, h4 {
+    color: var(--clr-primary);
+    font-weight: 700;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover,
+a:focus {
+    color: var(--clr-accent);
+}
+
+hr {
+    border: none;
+    border-top: 1px solid var(--clr-border);
+}
+
+/* ---------- Шапка ---------- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 1.2rem 5vw;
+    background-color: var(--clr-bg-main);
+    box-shadow: 0 0.2rem 1rem rgba(0, 0, 0, 0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--font-head);
+    font-size: 1.7rem;
+    color: var(--clr-primary);
+    white-space: nowrap;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
+    align-items: center;
+    font-weight: 500;
+    color: var(--clr-primary);
+}
+
+/* ---------- Секції ---------- */
+section {
+    padding: 5rem 5vw;
+}
+
+.section-alt {
+    background-color: var(--clr-bg-alt);
+}
+
+.section-sub {
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--clr-text);
+    margin-bottom: 0.3rem;
+}
+
+section h2 {
+    font-family: var(--font-head);
+    font-size: 3rem;
+    line-height: 1.2;
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+/* ---------- Hero ---------- */
+#hero {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    gap: 3rem;
+    max-width: 1350px;
+    margin: 0 auto;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+}
+
+.hero-sub {
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--clr-accent);
+    margin-bottom: 1rem;
+}
+
+#hero h1 {
+    font-family: var(--font-head);
+    font-size: clamp(2.4rem, 5vw, 4.4rem);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+}
+
+#hero h1 .hl {
+    background: linear-gradient(transparent 70%, rgba(241, 165, 1, 0.45) 70%);
+}
+
+.hero-desc {
+    max-width: 32rem;
+    font-size: 1.1rem;
+    margin-bottom: 0;
+}
+
+.hero-img {
+    position: relative;
+    z-index: 0;
+}
+
+.hero-img::before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -8%;
+    right: -6%;
+    width: 80%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: rgba(241, 165, 1, 0.18);
+}
+
+.hero-img img {
+    display: block;
+    width: 100%;
+    height: clamp(280px, 38vw, 520px);
+    object-fit: cover;
+    border-radius: 3rem 3rem 3rem 8rem;
+    box-shadow: var(--shadow-hover);
+}
+
+/* ---------- Картки екскурсій ---------- */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    max-width: 1350px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.tour-card {
+    background-color: var(--clr-bg-main);
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-card);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.tour-card:hover {
+    transform: translateY(-0.8rem);
+    box-shadow: var(--shadow-hover);
+}
+
+.tour-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-body {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    flex-grow: 1;
+}
+
+.card-main-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card-main-info h3 {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--clr-text);
+    margin: 0;
+}
+
+.card-price {
+    font-size: 1.15rem;
+    font-weight: 500;
+    color: var(--clr-text);
+    white-space: nowrap;
+}
+
+.card-trip-info {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.card-trip-info i {
+    color: var(--clr-primary);
+    font-size: 1rem;
+}
+
+/* ---------- Форми ---------- */
+form {
+    width: calc(100% - 2rem);
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: var(--clr-bg-main);
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+}
+
+.form-title {
+    font-family: var(--font-head);
+    font-size: 1.8rem;
+    text-align: center;
+    margin: 3.5rem 0 2rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="search"],
+select,
+textarea {
+    width: 100%;
+    padding: 0.9rem;
+    margin-top: 0.4rem;
+    margin-bottom: 1.5rem;
+    border: 1.5px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    color: var(--clr-primary);
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--clr-primary);
+}
+
+fieldset {
+    border: 1.5px solid var(--clr-border);
+    border-radius: var(--radius-sm);
+    padding: 1.2rem;
+    margin-bottom: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.6rem 1rem;
+}
+
+fieldset legend {
+    grid-column: 1 / -1;
+}
+
+legend {
+    font-weight: 600;
+    padding: 0 0.5rem;
+    color: var(--clr-primary);
+}
+
+button {
+    background-color: var(--clr-primary);
+    color: var(--clr-bg-main);
+    border: 2px solid var(--clr-primary);
+    padding: 0.8rem 2rem;
+    border-radius: var(--radius-sm);
+    font-family: inherit;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+
+button:hover {
+    background-color: var(--clr-accent);
+    border-color: var(--clr-accent);
+}
+
+button[type="reset"] {
+    background-color: transparent;
+    color: var(--clr-text);
+    border-color: var(--clr-border);
+}
+
+button[type="reset"]:hover {
+    background-color: var(--clr-bg-alt);
+    color: var(--clr-primary);
+    border-color: var(--clr-primary);
+}
+
+/* ---------- Футер ---------- */
+footer {
+    background-color: var(--clr-bg-main);
+    border-top: 1px solid var(--clr-border);
+    color: var(--clr-text);
+    text-align: center;
+    padding: 3rem 5vw;
+    margin-top: auto;
+}
+
+footer .logo {
+    margin-bottom: 0.8rem;
+}
+
+footer p:last-child {
+    font-size: 0.95rem;
+}
+
+/* ---------- Підменю: relative (батько) + absolute (підменю) ---------- */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 6rem;
+}
+
+.dropdown {
+    position: relative;
+    padding: 1rem 0;
+}
+
+.dropdown-toggle .arrow {
+    display: inline-block;
+    font-size: 0.8em;
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover .arrow,
+.dropdown:focus-within .arrow {
+    transform: rotate(180deg);
+}
+
+.submenu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 250px;
+    list-style: none;
+    background-color: var(--clr-bg-main);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-card);
+    padding: 0.5rem 0;
+    z-index: 1100;
+
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0.5rem);
+    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+}
+
+.dropdown:hover .submenu,
+.dropdown:focus-within .submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.submenu a {
+    display: block;
+    padding: 0.7rem 1.2rem;
+    white-space: nowrap;
+}
+
+.submenu a:hover,
+.submenu a:focus {
+    background-color: var(--clr-bg-alt);
+    color: var(--clr-accent);
+}
+
+/* ---------- Фіксована кнопка «вгору» (position: fixed) ---------- */
+.to-top {
+    position: fixed;
+    left: 1.5rem;
+    bottom: 1.5rem;
+    width: 3.2rem;
+    height: 3.2rem;
+    border-radius: 50%;
+    background-color: var(--clr-accent);
+    box-shadow: var(--shadow-card);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.to-top::before {
+    content: '';
+    width: 0.9rem;
+    height: 0.9rem;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    transform: translateY(25%) rotate(45deg);
+}
+
+.to-top:hover,
+.to-top:focus {
+    background-color: var(--clr-primary);
+    transform: translateY(-0.3rem);
+}
+
+/* ---------- Зображення: текст по центру, при наведенні — фото ---------- */
+.card-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #fff;
+    background-color: rgba(20, 24, 62, 0.85);
+    transition: opacity 0.4s ease;
+}
+
+.tour-card:hover .card-overlay,
+.tour-card:focus-within .card-overlay {
+    opacity: 0;
+}
+
+/* ---------- Елемент пошуку (таблетка з іконкою) ---------- */
+header .search-form {
+    display: flex;
+    align-items: center;
+    width: auto;
+    margin: 0;
+    box-shadow: none;
+    border: 1.5px solid var(--clr-border);
+    border-radius: 999px;
+    padding: 0.2rem 0.4rem 0.2rem 1.2rem;
+    background-color: var(--clr-bg-main);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header .search-form:focus-within {
+    border-color: var(--clr-accent);
+    box-shadow: 0 0 0 3px rgba(223, 105, 81, 0.2);
+}
+
+header .search-form input[type="search"] {
+    border: none;
+    border-radius: 0;
+    margin: 0;
+    padding: 0.5rem 0;
+    width: 170px;
+    font-size: 1rem;
+    background: transparent;
+}
+
+header .search-form button,
+header .search-form button:hover {
+    background: transparent;
+    border: none;
+    color: var(--clr-primary);
+    padding: 0.5rem 0.8rem;
+    margin: 0;
+    font-size: 1rem;
+}
+
+header .search-form button:hover {
+    color: var(--clr-accent);
+}
+
+/* ---------- Grid: новини (список + картка) ---------- */
+.news-layout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    align-items: center;
+    gap: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.news-list .section-sub,
+.news-list h2 {
+    text-align: left;
+}
+
+.news-list h2 {
+    font-size: 2.8rem;
+    margin-bottom: 2.5rem;
+}
+
+.news-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.2rem;
+    margin-bottom: 2.2rem;
+}
+
+.news-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.8rem;
+    height: 2.8rem;
+    border-radius: 0.8rem;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.icon-yellow { background-color: #F0BB1F; }
+.icon-orange { background-color: var(--clr-accent); }
+.icon-teal   { background-color: #31627F; }
+
+.news-item h3 {
+    font-size: 1rem;
+    color: var(--clr-text);
+    margin-bottom: 0.2rem;
+}
+
+.news-item p {
+    font-size: 0.95rem;
+    max-width: 26rem;
+}
+
+.news-item time {
+    display: block;
+    margin-top: 0.3rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--clr-accent);
+}
+
+.news-visual {
+    position: relative;
+    justify-self: center;
+    width: 100%;
+    max-width: 440px;
+    padding-bottom: 1rem;
+}
+
+.news-visual::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    inset: -10% -10% -10% 10%;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(124, 150, 230, 0.18), transparent 70%);
+}
+
+.news-card {
+    position: relative;
+    z-index: 1;
+    background-color: var(--clr-bg-main);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-hover);
+    padding: 1.2rem 1.2rem 1.5rem;
+}
+
+.news-card img {
+    display: block;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 1.2rem;
+    margin-bottom: 1.2rem;
+}
+
+.news-card h3 {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--clr-primary);
+}
+
+.news-meta {
+    margin: 0.3rem 0 1rem;
+    font-size: 0.95rem;
+}
+
+.news-meta span {
+    margin: 0 0.3rem;
+}
+
+.news-chips {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+}
+
+.news-chips span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.2rem;
+    height: 2.2rem;
+    border-radius: 50%;
+    background-color: var(--clr-bg-alt);
+    font-size: 0.8rem;
+}
+
+.news-foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.news-foot i {
+    margin-right: 0.4rem;
+}
+
+.news-foot .news-heart {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #8A79DF;
+}
+
+.news-float {
+    position: absolute;
+    z-index: 2;
+    right: -2.5rem;
+    bottom: 5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 15rem;
+    background-color: var(--clr-bg-main);
+    border-radius: 1.2rem;
+    box-shadow: var(--shadow-hover);
+    padding: 1rem;
+}
+
+.news-float img {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.news-float h3 {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--clr-primary);
+}
+
+.float-label {
+    font-size: 0.8rem;
+}
+
+.float-progress {
+    margin: 0.4rem 0 0.3rem;
+    font-size: 0.8rem;
+    color: var(--clr-primary);
+}
+
+.float-progress span {
+    color: #8A79DF;
+}
+
+.progress {
+    height: 0.3rem;
+    border-radius: 999px;
+    background-color: var(--clr-border);
+    overflow: hidden;
+}
+
+.progress div {
+    width: 40%;
+    height: 100%;
+    background-color: #8A79DF;
+}
+
+/* ---------- Grid: контакти ---------- */
+#widp address {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+    font-style: normal;
+}
+
+#widp address p {
+    background-color: var(--clr-bg-main);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-card);
+    padding: 1.8rem 1rem;
+    font-weight: 500;
+    color: var(--clr-primary);
+}
+
+#widp address i {
+    font-size: 1.5rem;
+    color: var(--clr-accent);
+    margin-bottom: 0.6rem;
+}
+
+/* ---------- Адаптивність ---------- */
+@media (max-width: 992px) {
+    header {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    nav {
+        justify-content: center;
+        gap: 1rem 2rem;
+    }
+
+    section h2 {
+        font-size: 2.2rem;
+    }
+
+}
+
+@media (max-width: 600px) {
+    .news-float {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        width: 100%;
+        margin-top: -1.5rem;
+    }
+
+    section {
+        padding: 3rem 1rem;
+    }
+
+    #hero {
+        padding-top: 2rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+
+    .to-top {
+        left: 1rem;
+        bottom: 1rem;
+        width: 2.8rem;
+        height: 2.8rem;
+    }
+}
+
+
+/* ===================== ЛАБ. 4 ===================== */
+@keyframes fadeUp { from { opacity: 0; transform: translateY(2rem); } }
+@keyframes bob    { 50% { transform: translateY(-0.6rem); } }
+@keyframes fill   { from { width: 0; } }
+@keyframes pop    { from { opacity: 0; transform: scale(0.92) translateY(1rem); } }
+
+/* --- шапка: меню-гамбургер та кнопка входу --- */
+.menu { display: flex; align-items: center; gap: 2rem; }
+.burger { display: none; margin: 0; padding: 0.2rem 0.6rem; background: none; border: none; color: var(--clr-primary); font-size: 1.8rem; line-height: 1; }
+.burger:hover { background: none; color: var(--clr-accent); }
+.nav-signup { margin: 0; padding: 0.5rem 1.3rem; background: transparent; color: var(--clr-primary); border: 1.5px solid var(--clr-primary); font-weight: 500; white-space: nowrap; }
+.nav-signup:hover, .nav-signup:focus { background: var(--clr-primary); border-color: var(--clr-primary); color: #fff; }
+
+/* --- кнопка «вгору»: плавна поява --- */
+.to-top { opacity: 0; visibility: hidden; transition: opacity 0.4s ease, visibility 0.4s, transform 0.3s ease, background-color 0.3s ease; }
+.to-top.visible { opacity: 1; visibility: visible; }
+
+/* --- модальне вікно --- */
+dialog.modal { margin: auto; padding: 0; width: calc(100% - 2rem); max-width: 600px; border: none; background: transparent; overflow: visible; }
+dialog.modal[open] { animation: pop 0.35s ease; }
+dialog.modal::backdrop { background: rgba(20, 24, 62, 0.6); backdrop-filter: blur(3px); }
+.modal form { position: relative; width: 100%; margin: 0; box-shadow: var(--shadow-hover); }
+.modal h3 { font-family: var(--font-head); font-size: 1.8rem; text-align: center; margin-bottom: 1.5rem; }
+.modal-close { position: absolute; top: 0.8rem; right: 1.2rem; margin: 0; padding: 0; background: none; border: none; color: var(--clr-text); font-size: 2rem; line-height: 1; }
+.modal-close:hover { background: none; color: var(--clr-accent); }
+
+/* --- валідація лише HTML + CSS (псевдокласи :valid / :invalid / :placeholder-shown) --- */
+.hint { display: none; margin: -1.1rem 0 1.2rem; font-size: 0.85rem; color: #d64545; }
+form input:is([type="text"], [type="email"], [type="password"]):not(:placeholder-shown):invalid { border-color: #d64545; }
+form input:is([type="text"], [type="email"], [type="password"]):not(:placeholder-shown):valid { border-color: #2e9e62; }
+form input:not(:placeholder-shown):invalid + .hint { display: block; }
+
+/* --- карусель відгуків --- */
+.carousel { position: relative; max-width: 800px; margin: 0 auto; overflow: hidden; background: var(--clr-bg-main); border-radius: var(--radius-lg); box-shadow: var(--shadow-card); }
+.carousel-track { display: flex; transition: transform 0.6s ease; }
+.slide { flex: 0 0 100%; padding: 3rem 4.5rem 1.5rem; text-align: center; }
+.slide blockquote { margin-bottom: 1.2rem; font-size: 1.2rem; color: var(--clr-primary); }
+.slide figcaption { font-weight: 600; color: var(--clr-accent); }
+.car-btn { position: absolute; top: 50%; transform: translateY(-50%); width: 2.6rem; height: 2.6rem; margin: 0; padding: 0; border-radius: 50%; background: var(--clr-bg-alt); color: var(--clr-primary); border: none; }
+.car-btn:hover { background: var(--clr-accent); color: #fff; }
+.prev { left: 1rem; } .next { right: 1rem; }
+.dots { display: flex; justify-content: center; gap: 0.5rem; padding-bottom: 1.5rem; }
+.dot { width: 0.7rem; height: 0.7rem; margin: 0; padding: 0; border: none; border-radius: 50%; background: var(--clr-border); }
+.dot:hover, .dot.active { background: var(--clr-accent); }
+
+.footer-links { margin-bottom: 0.8rem; }
+.footer-links a { margin: 0 0.6rem; font-weight: 500; }
+
+/* --- анімації --- */
+#hero .hero-text { animation: fadeUp 0.8s backwards; }
+#hero .hero-img  { animation: fadeUp 0.8s 0.2s backwards; }
+.news-float { animation: bob 4s ease-in-out infinite; }
+.reveal { opacity: 0; }
+.reveal.in { opacity: 1; animation: fadeUp 0.7s backwards; }
+.reveal:nth-child(2).in { animation-delay: 0.12s; }
+.reveal:nth-child(3).in { animation-delay: 0.24s; }
+.reveal:nth-child(4).in { animation-delay: 0.36s; }
+.in .progress div { animation: fill 1.5s 0.5s backwards; }
+
+/* --- адаптивність --- */
+@media (max-width: 992px) {
+    header { flex-wrap: wrap; justify-content: space-between; gap: 1rem; }
+    .burger { display: block; margin-left: auto; }
+    .menu { display: none; order: 3; width: 100%; flex-direction: column; align-items: stretch; gap: 1rem; }
+    .menu.open { display: flex; animation: fadeUp 0.3s; }
+    nav { flex-direction: column; align-items: flex-start; gap: 0.3rem; }
+    .dropdown { padding: 0.3rem 0; }
+    .submenu { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; padding: 0.2rem 0 0 1rem; }
+    header .search-form { align-self: stretch; }
+    header .search-form input[type="search"] { flex: 1; width: auto; }
+}
+
+@media (max-width: 768px) {
+    /* кнопка входу нерухома на малих пристроях */
+    .nav-signup { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 2000; padding: 0.8rem 1.6rem; background: var(--clr-primary); color: #fff; border-radius: 999px; box-shadow: var(--shadow-hover); }
+    .nav-signup:hover, .nav-signup:focus { background: var(--clr-accent); border-color: var(--clr-accent); }
+    .slide { padding: 2.5rem 3.2rem 1rem; }
+    .slide blockquote { font-size: 1.05rem; }
+}
+
+@media (max-width: 480px) {
+    .logo { font-size: 1.4rem; }
+    #hero h1 { font-size: 2.2rem; }
+    section h2 { font-size: 1.8rem; margin-bottom: 2rem; }
+    .nav-signup { right: 1rem; bottom: 1rem; }
+    .slide { padding: 2rem 2.6rem 1rem; }
+    .car-btn { width: 2.1rem; height: 2.1rem; }
+    .prev { left: 0.4rem; } .next { right: 0.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    *, *::before, *::after { transition: none !important; animation: none !important; }
+    .reveal { opacity: 1; }
+}

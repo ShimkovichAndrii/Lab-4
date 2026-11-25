@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Запрошення на театралізовану екскурсію з чернівецьким ліхтарником.">
+    <title>Запрошення — Чернівці-Тур</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✉️</text></svg>">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Volkhov:wght@700&display=swap">
+    <link rel="stylesheet" href="css/invitation.css">
+</head>
+<body>
+    <main>
+        <a class="back" href="index.html">&larr; На головну</a>
+        <input type="checkbox" id="open" hidden>
+        <label class="envelope" for="open" title="Натисніть, щоб відкрити">
+            <span class="flap"></span>
+            <span class="stamp">&#9993;</span>
+            <span class="address">Для: шановних гостей<br>м. Чернівці, Театральна площа</span>
+        </label>
+
+        <article class="invitation">
+            <p class="kicker">Чернівці-Тур запрошує</p>
+            <h1>Вечір із чернівецьким ліхтарником</h1>
+            <p>Шановні гості! Запрошуємо вас на театралізовану екскурсію старовинними вуличками міста у супроводі колоритного ліхтарника та живих міських легенд.</p>
+            <dl class="details">
+                <div><dt>Дата</dt><dd>5 грудня 2026</dd></div>
+                <div><dt>Час</dt><dd>18:00</dd></div>
+                <div><dt>Збір</dt><dd>Театральна площа</dd></div>
+                <div><dt>Вартість</dt><dd>150 грн</dd></div>
+            </dl>
+            <p class="contacts">+38 (050) 123-45-67 · info@chernivtsi-tour.ua</p>
+        </article>
+
+        <button type="button" class="print" onclick="window.print()">Друк запрошення</button>
+    </main>
+</body>
+</html>
